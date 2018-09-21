@@ -89,6 +89,44 @@ $(function() {
     alert("Copy failed.");
   });
 
+  //工具提示
+  $("#root").on("mouseover", ".u-tooltip", function(event) {
+    var $this = $(this),
+      pop_section = $(".pop-section"),
+      placement = $this.data("placement"),
+      pageX = event.clientX,
+      pageY = event.clientY;
+    pop_section.css({ right: "auto", left: pageX + 15 });
+    pop_section.css({ bottom: "auto", top: pageY + 15 });
+    if (placement) {
+      if (placement.indexOf("left") != -1) {
+        pop_section.css({ left: "auto", right: pageX - 15 });
+      }
+      if (placement.indexOf("right") != -1) {
+        pop_section.css({ right: "auto", left: pageX + 15 });
+      }
+      if (placement.indexOf("top") != -1) {
+        pop_section.css({ top: "auto", bottom: pageY - 15 });
+      }
+      if (placement.indexOf("bottom") != -1) {
+        pop_section.css({ bottom: "auto", top: pageY + 15 });
+      }
+    }
+    $(".pop-section .title").text($this.data("title"));
+    $(".pop-section .dec").text($this.data("dec"));
+    pop_section.show();
+  });
+
+  $("#root").on("mouseout", ".u-tooltip", function(event) {
+    $(".pop-section").hide();
+    $(".pop-section .title").text("");
+    $(".pop-section .dec").text("");
+  });
+
+  $("#root").after(
+    `<div class="pop-section"><div class="content"><h2 class="title"></h2><p class="dec"></p></div></div>`
+  );
+
   for (var i = 0; i < $navs.length; i++) {
     $navs[i].title = i;
     $navs[i].onclick = function() {
