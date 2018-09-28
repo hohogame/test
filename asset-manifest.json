@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.cd6fb441.css",
-  "main.css.map": "static/css/main.cd6fb441.css.map",
-  "main.js": "static/js/main.56c1dea0.js",
-  "main.js.map": "static/js/main.56c1dea0.js.map",
+  "main.css": "static/css/main.f9d5337b.css",
+  "main.css.map": "static/css/main.f9d5337b.css.map",
+  "main.js": "static/js/main.b5129354.js",
+  "main.js.map": "static/js/main.b5129354.js.map",
   "static/media/CircularStd-BlackItalic.otf": "static/media/CircularStd-BlackItalic.0cda47fe.otf",
   "static/media/NeoSans-Bold.otf": "static/media/NeoSans-Bold.421eb5f8.otf",
   "static/media/NeoSans-Light.otf": "static/media/NeoSans-Light.8d632071.otf",
@@ -10,8 +10,11 @@
   "static/media/NeoSans.otf": "static/media/NeoSans.c74edeaf.otf",
   "static/media/commingsoon@2x.png": "static/media/commingsoon@2x.a404596d.png",
   "static/media/cutdown@2x.png": "static/media/cutdown@2x.b97272fb.png",
+  "static/media/icn_metamask_super@2x.png": "static/media/icn_metamask_super@2x.3182cb28.png",
+  "static/media/mainnetSwitch@2x.png": "static/media/mainnetSwitch@2x.4970a121.png",
   "static/media/subscribe@2x.png": "static/media/subscribe@2x.872ed792.png",
   "static/media/subscribe_click@2x.png": "static/media/subscribe_click@2x.e804c133.png",
   "static/media/subscribe_email_bg@2x.png": "static/media/subscribe_email_bg@2x.8836be51.png",
-  "static/media/subscribe_hover@2x.png": "static/media/subscribe_hover@2x.b9a05505.png"
+  "static/media/subscribe_hover@2x.png": "static/media/subscribe_hover@2x.b9a05505.png",
+  "static/media/testnetSwitch@2x.png": "static/media/testnetSwitch@2x.9f8c92eb.png"
 }
