@@ -2,7 +2,6 @@ $(function() {
   var $navs = $("#tab-nav li");
   var divs = $("#tab-contain .mod");
   var $navbar = $("#nav-bar");
-  var $menuLis2 = $("#menu-list2");
 
   $("#root").on("click", "#misc-btn", function() {
     var $miscNenu = $(".misc-menu-wrapper");
@@ -54,14 +53,44 @@ $(function() {
       .removeClass("focus");
   });
 
-  $("#menu-btn").on("click", function() {
-    $navbar.css({ visibility: "hidden" });
-    $menuLis2.show();
+  $("#root").on("click", "#menu-btn", function() {
+    var $this = $(this);
+    if ($this.hasClass("open")) {
+      $this.removeClass("open").addClass("close");
+      $("#menu-list2").show();
+      $("body").css("overflow", "hidden");
+    } else {
+      $this.removeClass("close").addClass("open");
+      $("#menu-list2").hide();
+      $("body").css("overflow", "auto");
+    }
   });
 
-  $("#menu-list2 #close-btn").on("click", function() {
-    $menuLis2.hide();
-    $navbar.css({ visibility: "" });
+  window.addEventListener("hashchange", function() {
+    $("body").css("overflow", "auto");
+  });
+
+  $("#root").on("click", "#bet-switch .btn", function(event) {
+    var $this = $(this);
+    if (!$this.hasClass("active")) {
+      $("#bet-switch .active").removeClass("active");
+      $this.addClass("active");
+      if ($this.data("panel") == "history") {
+        $(".section-history").show();
+        $(".section-clock").hide();
+        $(".section-control").hide();
+      } else {
+        $(".section-history").hide();
+        $(".section-clock").show();
+        $(".section-control").show();
+      }
+    }
+  });
+
+  $("#root").on("click", ".viewAll", function(event) {
+    var $this = $(this);
+    $this.parents(".table-body").removeClass("lb-table-more");
+    $this.hide();
   });
 
   // 不允许输入负数
